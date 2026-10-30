@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 470" font-family="Helvetica, Arial, sans-serif">
+  <title>From a CT to PyTomography's list mode file: the stages of run.py, and what each Zenodo record holds</title>
+  <rect width="1100" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #f7f9fb; stroke: #2c3e50; stroke-width: 1.3; }
+    .t { font-size: 14px; font-weight: bold; fill: #1b2631; }
+    .s { font-size: 11.5px; fill: #445; }
+    .m { font-size: 11px; fill: #2c6fbb; font-family: Consolas, Menlo, monospace; }
+    .ln { stroke: #444; stroke-width: 1.4; fill: none; }
+    .rec { fill: none; stroke: #b9770e; stroke-width: 1.5; stroke-dasharray: 6 4; }
+    .rt { font-size: 12px; fill: #b9770e; font-weight: bold; }
+  </style>
+
+  <!-- the GATE record's span -->
+  <rect class="rec" x="12" y="14" width="760" height="300" rx="6"/>
+  <text class="rt" x="22" y="32">Zenodo: the GATE simulation (CT, phantom, scan, calibrations)</text>
+
+  <!-- row 1 -->
+  <rect class="box" x="30" y="48" width="160" height="78" rx="3"/>
+  <text class="t" x="42" y="70">CT or μ-map</text>
+  <text class="s" x="42" y="89">a patient CT (DICOM, NIfTI)</text>
+  <text class="s" x="42" y="104">or a 511 keV attenuation</text>
+  <text class="s" x="42" y="119">map (the head)</text>
+
+  <rect class="box" x="225" y="48" width="160" height="78" rx="3"/>
+  <text class="t" x="237" y="70">phantom</text>
+  <text class="s" x="237" y="89">a slab in HU, couch off,</text>
+  <text class="s" x="237" y="104">centred on the axis</text>
+  <text class="m" x="237" y="119">phantom_from_ct.py</text>
+
+  <rect class="box" x="420" y="48" width="160" height="78" rx="3"/>
+  <text class="t" x="432" y="70">materials</text>
+  <text class="s" x="432" y="89">Schneider tissues; each</text>
+  <text class="s" x="432" y="104">voxel's true RSP</text>
+  <text class="m" x="432" y="119">pct_materials.py</text>
+
+  <rect class="box" x="615" y="48" width="140" height="78" rx="3"/>
+  <text class="t" x="627" y="70">scan</text>
+  <text class="s" x="627" y="89">GATE, one view per</text>
+  <text class="s" x="627" y="104">process, many at once</text>
+  <text class="m" x="627" y="119">dtc_run.py</text>
+
+  <path class="ln" d="M190,87 H221" marker-end="url(#a)"/>
+  <path class="ln" d="M385,87 H416" marker-end="url(#a)"/>
+  <path class="ln" d="M580,87 H611" marker-end="url(#a)"/>
+
+  <!-- row 2: detector materials, calibrations, the per-view tables -->
+  <rect class="box" x="30" y="190" width="160" height="78" rx="3"/>
+  <text class="t" x="42" y="212">detector</text>
+  <text class="s" x="42" y="231">the DTC's materials, each</text>
+  <text class="s" x="42" y="246">layer's water equivalent</text>
+  <text class="m" x="42" y="261">dtc_wet.py</text>
+
+  <rect class="box" x="225" y="190" width="160" height="78" rx="3"/>
+  <text class="t" x="237" y="212">calibrate</text>
+  <text class="s" x="237" y="231">water slabs: energy and</text>
+  <text class="s" x="237" y="246">measured range against WEPL</text>
+  <text class="m" x="237" y="261">pct_calib.py, dtc_calib.py</text>
+
+  <rect class="box" x="560" y="190" width="195" height="78" rx="3"/>
+  <text class="t" x="572" y="212">per-view tables</text>
+  <text class="s" x="572" y="231">each proton's true entry and</text>
+  <text class="s" x="572" y="246">exit; every DTC cluster</text>
+  <text class="s" x="572" y="261">(layer, pixel, energy)</text>
+  <path class="ln" d="M685,126 V186" marker-end="url(#a)"/>
+  <path class="ln" d="M190,229 H221" marker-end="url(#a)"/>
+
+  <!-- row 3, outside the GATE record: measure, list mode, PyTomography -->
+  <rect class="box" x="225" y="350" width="185" height="92" rx="3"/>
+  <text class="t" x="237" y="372">measure</text>
+  <text class="s" x="237" y="391">exit from the 2 trackers,</text>
+  <text class="s" x="237" y="406">range from the calorimeter;</text>
+  <text class="s" x="237" y="421">the spot's ray as the entry</text>
+  <text class="m" x="237" y="436">dtc_planes.py, dtc_spots.py</text>
+
+  <rect class="box" x="450" y="350" width="200" height="92" rx="3"/>
+  <text class="t" x="462" y="372">list mode</text>
+  <text class="s" x="462" y="391">WEPL, 3σ cuts, each proton's</text>
+  <text class="s" x="462" y="406">most likely entry, saved as</text>
+  <text class="s" x="462" y="421">PyTomography's .h5</text>
+  <text class="m" x="462" y="436">gate_to_listmode.py</text>
+
+  <rect class="box" x="760" y="350" width="170" height="92" rx="3" style="fill:#eaf4ea; stroke:#1e7b34"/>
+  <text class="t" x="772" y="372">PyTomography</text>
+  <text class="s" x="772" y="391">load_listmode; two-pass</text>
+  <text class="s" x="772" y="406">FBP; SART along curved</text>
+  <text class="s" x="772" y="421">paths: the RSP image</text>
+
+  <path class="ln" d="M657,268 V300 H318 V346" marker-end="url(#a)"/>
+  <path class="ln" d="M305,268 V346" marker-end="url(#a)"/>
+  <path class="ln" d="M410,396 H446" marker-end="url(#a)"/>
+  <path class="ln" d="M650,396 H756" marker-end="url(#a)"/>
+
+  <!-- the processed record -->
+  <rect class="rec" x="440" y="336" width="220" height="118" rx="6" style="stroke:#1e7b34"/>
+  <text class="rt" x="672" y="342" style="fill:#1e7b34">Zenodo: the processed scan</text>
+  <text class="s" x="672" y="458">the .h5, true RSP, organs</text>
+  <text class="s" x="22" y="300">run.py runs every stage from one config file</text>
+  <text class="s" x="22" y="315">(configs/*.json); each stage skips what is done.</text>
+</svg>

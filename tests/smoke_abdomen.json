@@ -1,0 +1,45 @@
+{
+ "name": "abdomen",
+ "description": "A few minutes' check that every stage runs: the published abdomen phantom, 2 views of 21 spots, calibrations every 10 mm to 400 mm.",
+ "out": "../out/smoke_abdomen",
+ "python": {
+  "gate": "python",
+  "analysis": "python"
+ },
+ "workers": 2,
+ "phantom": {
+  "from": "ct",
+  "ct": "../data/ct_dicom",
+  "slices": [
+   150,
+   207
+  ]
+ },
+ "beam": {
+  "energy": 330.0,
+  "x_half": 21.0,
+  "z_centre": 1.25,
+  "z_half": 7.0
+ },
+ "scan": {
+  "views": 2,
+  "protons_per_view": 21000,
+  "seed": 1500000
+ },
+ "detector": {
+  "layers": 77,
+  "chips": 16,
+  "bands": 12
+ },
+ "calibration": {
+  "protons_per_thickness": 500,
+  "max_thickness": 400
+ },
+ "entries": {
+  "mode": "likely",
+  "spot_sd": 3.69,
+  "divergence": 0.000763,
+  "exit_angle_sd": 0.00134,
+  "scale": 0.887
+ }
+}

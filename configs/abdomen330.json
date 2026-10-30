@@ -1,0 +1,13 @@
+{
+ "name": "abdomen330",
+ "description": "The published scan: an adult abdomen (TCIA PSMA-PET-CT-Lesions PSMA_28f9ecc106933531) at 330 MeV on a 480 x 165 mm, 77-layer DTC, no front tracker. 9 h on 20 cores, 106 GB.",
+ "out": "../out/abdomen330",
+ "python": {"gate": "python", "analysis": "python"},
+ "workers": 20,
+ "phantom": {"from": "ct", "ct": "../data/ct_dicom", "slices": [150, 207]},
+ "beam": {"energy": 330.0, "x_half": 196.0, "z_centre": 1.25, "z_half": 56.25},
+ "scan": {"views": 360, "protons_per_view": 1140000, "seed": 1500000},
+ "detector": {"layers": 77, "chips": 16, "bands": 12},
+ "calibration": {"protons_per_thickness": 10000, "max_thickness": 480},
+ "entries": {"mode": "likely", "spot_sd": 3.69, "divergence": 0.000763, "exit_angle_sd": 0.00134, "scale": 0.887}
+}

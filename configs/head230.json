@@ -1,0 +1,13 @@
+{
+ "name": "head",
+ "description": "An adult head (the BigBrain FDG phantom's 511 keV attenuation map, Belzunce 2018, Zenodo 8045458) at 230 MeV on Bergen's DTC: 270 x 165 mm, 41 layers. Not yet run in full: about 5 to 6 h on 20 cores. Entries from a front tracker until the single-sided entry model is fitted for this beam and phantom.",
+ "out": "../out/head230",
+ "python": {"gate": "python", "analysis": "python"},
+ "workers": 20,
+ "phantom": {"from": "mumap", "mumap": "../data/fdg_pet_phantom_umap.nii.gz", "voxel": 1.0},
+ "beam": {"energy": 230.0, "x_half": 126.0, "z_centre": 0.0, "z_half": 77.0},
+ "scan": {"views": 360, "protons_per_view": 1000000, "seed": 1100000},
+ "detector": {"layers": 41, "chips": 9, "bands": 12},
+ "calibration": {"protons_per_thickness": 10000, "max_thickness": 300},
+ "entries": {"mode": "tracker"}
+}

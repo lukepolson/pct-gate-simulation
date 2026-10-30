@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" font-family="Helvetica, Arial, sans-serif">
+  <title>The simulated scanner, seen from above, to scale (abdomen at 330 MeV)</title>
+  <!-- scale: y (beam axis, mm) -> px: x_px = 430 + 0.62 * y_mm ; lateral x (mm) -> px: y_px = 250 - 0.62 * x_mm -->
+  <rect width="1100" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <!-- the beam: nozzle at y = -500 mm, spots across x = -196..196 mm -->
+  <rect x="112" y="131" width="8" height="238" fill="#555"/>
+  <text x="116" y="122" font-size="13" text-anchor="middle" fill="#222">nozzle</text>
+  <text x="116" y="386" font-size="11" text-anchor="middle" fill="#555">y = −500</text>
+  <g stroke="#c0392b" stroke-width="1.3" fill="none" opacity="0.85">
+    <line x1="122" y1="137" x2="272" y2="133" marker-end="url(#b)"/>
+    <line x1="122" y1="193.5" x2="272" y2="191.5" marker-end="url(#b)"/>
+    <line x1="122" y1="250" x2="272" y2="250" marker-end="url(#b)"/>
+    <line x1="122" y1="306.5" x2="272" y2="308.5" marker-end="url(#b)"/>
+    <line x1="122" y1="363" x2="272" y2="367" marker-end="url(#b)"/>
+  </g>
+  <text x="20" y="60" font-size="12" fill="#c0392b">pencil beams, 330 MeV, from scanning magnets 6.8 m upstream;</text>
+  <text x="20" y="75" font-size="11" fill="#c0392b">spots every 7 mm over x ±196 mm, σ 3.7 mm at the entry plane</text>
+  <!-- entry plane y = -251.95 -->
+  <line x1="274" y1="96" x2="274" y2="404" stroke="#2c6fbb" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="274" y="88" font-size="12" text-anchor="middle" fill="#2c6fbb">entry plane</text>
+  <text x="274" y="422" font-size="11" text-anchor="middle" fill="#2c6fbb">y = −252</text>
+  <!-- the phantom: body 352 x 297 mm, turned about z (out of the page) -->
+  <ellipse cx="430" cy="250" rx="92" ry="109" fill="#e9d8c4" stroke="#8a6d4b" stroke-width="1.5"/>
+  <ellipse cx="415" cy="236" rx="22" ry="17" fill="#d4b48f"/>
+  <ellipse cx="452" cy="276" rx="14" ry="10" fill="#d4b48f"/>
+  <circle cx="430" cy="250" r="147" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="430" y="254" font-size="12" text-anchor="middle" fill="#5b4630">abdomen</text>
+  <text x="430" y="269" font-size="11" text-anchor="middle" fill="#5b4630">turned 1° per view</text>
+  <text x="430" y="420" font-size="11" text-anchor="middle" fill="#777">circle its box sweeps (r 237 mm)</text>
+  <path d="M 498 158 A 105 105 0 0 1 522 196" fill="none" stroke="#333" stroke-width="1.3" marker-end="url(#a)"/>
+  <!-- exit plane y = 248.95, trackers 251.95, 309.75 -->
+  <line x1="584" y1="96" x2="584" y2="404" stroke="#7f8c8d" stroke-width="1.5" stroke-dasharray="2 3"/>
+  <text x="577" y="88" font-size="11" text-anchor="end" fill="#7f8c8d">exit plane (truth only)</text>
+  <rect x="585" y="101" width="3" height="298" fill="#2c3e50"/>
+  <rect x="621" y="101" width="3" height="298" fill="#2c3e50"/>
+  <text x="604" y="430" font-size="12" text-anchor="middle" fill="#2c3e50">2 tracker layers</text>
+  <text x="604" y="445" font-size="11" text-anchor="middle" fill="#555">y = 252, 310</text>
+  <!-- calorimeter: 75 layers from y = 352.7 to 770.7, 5.5 mm pitch (drawn every 5th) -->
+  <rect x="648" y="101" width="259" height="298" fill="#eef2f6" stroke="#2c3e50" stroke-width="1.2"/>
+  <g stroke="#7f93a8" stroke-width="1">
+    <line x1="665" y1="101" x2="665" y2="399"/><line x1="682" y1="101" x2="682" y2="399"/>
+    <line x1="699" y1="101" x2="699" y2="399"/><line x1="716" y1="101" x2="716" y2="399"/>
+    <line x1="733" y1="101" x2="733" y2="399"/><line x1="750" y1="101" x2="750" y2="399"/>
+    <line x1="767" y1="101" x2="767" y2="399"/><line x1="784" y1="101" x2="784" y2="399"/>
+    <line x1="801" y1="101" x2="801" y2="399"/><line x1="818" y1="101" x2="818" y2="399"/>
+    <line x1="835" y1="101" x2="835" y2="399"/><line x1="852" y1="101" x2="852" y2="399"/>
+    <line x1="869" y1="101" x2="869" y2="399"/><line x1="886" y1="101" x2="886" y2="399"/>
+  </g>
+  <text x="778" y="430" font-size="12" text-anchor="middle" fill="#2c3e50">calorimeter: 75 layers, 5.5 mm apart</text>
+  <text x="778" y="445" font-size="11" text-anchor="middle" fill="#555">y = 353 to 771; each layer ALPIDE chips and 3.5 mm Al</text>
+  <!-- a proton: scatters in the body, tracked, stops in the calorimeter -->
+  <path d="M 274 214 C 360 214, 420 212, 510 205 S 600 198, 624 197 S 700 193, 742 191" fill="none" stroke="#111" stroke-width="1.6"/>
+  <circle cx="742" cy="191" r="4" fill="#111"/>
+  <text x="752" y="186" font-size="11" fill="#111">stops: its range gives the WEPL</text>
+  <!-- detector width -->
+  <line x1="925" y1="101" x2="925" y2="399" stroke="#333" stroke-width="1" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="935" y="245" font-size="12" fill="#333">480 mm</text>
+  <text x="935" y="260" font-size="11" fill="#555">(16 chips);</text>
+  <text x="935" y="275" font-size="11" fill="#555">165 mm tall</text>
+  <text x="935" y="290" font-size="11" fill="#555">(12 bands)</text>
+  <!-- axes -->
+  <line x1="40" y1="480" x2="110" y2="480" stroke="#333" stroke-width="1.2" marker-end="url(#a)"/>
+  <text x="116" y="484" font-size="12" fill="#333">y (beam), mm</text>
+  <line x1="40" y1="480" x2="40" y2="420" stroke="#333" stroke-width="1.2" marker-end="url(#a)"/>
+  <text x="46" y="424" font-size="12" fill="#333">x</text>
+  <text x="660" y="482" font-size="11" fill="#555">Seen from above, to scale; z (the rotation axis) points out of the page. No front tracker: the scanner</text>
+  <text x="660" y="497" font-size="11" fill="#555">knows each proton's spot from the beam log, its exit from the trackers, its range from the calorimeter.</text>
+</svg>
